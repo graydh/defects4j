@@ -147,7 +147,7 @@ if (defined $TEST_SUITE) {
     $cov_results = Coverage::coverage($project, $classes, $src_dir, $fail_tests, $REL_TESTS);
 } else {
     # Compile and run developer-written tests
-    $project->compile_tests() or die "Cannot compile test suite!";
+    # DGM Removed to save execution time during repeated coverage collection --- $project->compile_tests() or die "Cannot compile test suite!";
     $cov_results = Coverage::coverage($project, $classes, $src_dir, $fail_tests, undef, $SINGLE_TEST);
 }
 defined $cov_results or die "Couldn't obtain coverage results!";

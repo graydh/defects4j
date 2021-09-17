@@ -320,8 +320,8 @@ sub exclude_tests_in_file {
     my $work_dir = $self->{prog_root};
 
     # Remove broken test methods
-    Utils::exec_cmd("$UTIL_DIR/rm_broken_tests.pl $file $work_dir/$tests_dir",
-            "Excluding broken/flaky tests") or die;
+    # DGM commented out to keep all tests in project --- Utils::exec_cmd("$UTIL_DIR/rm_broken_tests.pl $file $work_dir/$tests_dir",
+            # DGM commented out to keep all tests in project --- "Excluding broken/flaky tests") or die;
 
     # Check whether broken test classes should be excluded
     my $failed = Utils::get_failing_tests($file);

@@ -82,4 +82,7 @@ $project->{prog_root} = $WORK_DIR;
 $project->compile() or die "Cannot compile sources!";
 $project->compile_tests() or die "Cannot compile tests!";
 
+# DGM added instrument all classes after compile to avoid re-instrumentation in coverage
+my $instrument_classes = "instrument_classes";
+$project->coverage_instrument($instrument_classes) or return undef;
 1;

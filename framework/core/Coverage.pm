@@ -87,7 +87,7 @@ sub coverage {
     system("rm -f $serfile");
 
     # Instrument all classes provided
-	$project->coverage_instrument($instrument_classes) or return undef;
+	# DGM removed to avoid re-instrumenting all classes --- $project->coverage_instrument($instrument_classes) or return undef;
 
     # Execute test suite
     if ($relevant_tests) {
